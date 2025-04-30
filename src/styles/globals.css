@@ -1,0 +1,324 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neutral-900: #1a1a1aff;
+  --neutral-800: #262626ff;
+  --neutral-700: #404040ff;
+  --neutral-600: #525252ff;
+  --neutral-500: #737373ff;
+  --neutral-400: #a3a3a3ff;
+  --neutral-300: #d4d4d4ff;
+  --neutral-200: #e5e5e5ff;
+  --neutral-100: #f5f5f5ff;
+  --neutral-50: #fafafaff;
+
+  --default-teal: #30b0c7ff;
+  --default-purple: #af52deff;
+  --default-indigo: #5856d6ff;
+  --default-green: #34c759ff;
+  --default-yellow: #ffcc00ff;
+  --default-orange: #ff9500ff;
+  --default-red: #ff3b30ff;
+  --default-blue: #007affff;
+
+  --base-black: #000000ff;
+  --base-white: #ffffffff;
+}
+
+html,
+body {
+  @apply text-base text-Mtext-text-primary font-Inter m-0 p-0;
+}
+
+.container {
+  max-width: 1300px;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 92%;
+  }
+}
+
+section {
+  padding: 80px 0;
+}
+
+.clamp-1 {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.clamp-2 {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.barIcon {
+  @apply flex flex-wrap gap-1;
+}
+
+.barIcon div {
+  @apply w-full h-[2px] inline-block rounded-sm transition-all duration-500;
+}
+
+.barIcon div {
+  @apply w-full h-[2px] inline-block rounded-sm transition-all duration-500;
+}
+
+.barIcon.active div:nth-child(1) {
+  @apply absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rotate-45;
+}
+
+.barIcon.active div:nth-child(2) {
+  @apply hidden;
+}
+
+.barIcon.active div:nth-child(3) {
+  @apply absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 -rotate-45;
+}
+
+/* verificaion */
+.WrapVerification {
+  @apply w-full;
+}
+
+.WrapVerification .vi__wrapper {
+  @apply !w-full;
+}
+
+.WrapVerification .vi__container.wrap {
+  @apply flex items-center justify-between w-full gap-4;
+}
+
+.WrapVerification .vi__container.wrap .character {
+  flex-basis: auto;
+  flex-grow: unset;
+  @apply w-[56px] h-[56px] rounded-[7px];
+}
+
+.WrapVerification .vi__container.wrap .character {
+  @apply font-bold text-[24px] text-black dark:text-white;
+}
+
+.WrapVerification
+  .vi__container.wrap
+  .character:where(.vi__character--inactive) {
+  @apply bg-[#FAFAFA] dark:bg-Mbrand-background border-[#F5F5F5];
+}
+
+.WrapVerification .vi__container.wrap .character:where(.vi__character) {
+  @apply bg-[#FAFAFA] dark:bg-Mbrand-background border-[#F5F5F5];
+}
+
+.WrapVerification
+  .vi__container.wrap
+  .character:where(.vi__character--selected) {
+  outline: 2px solid #0066d6ff;
+  @apply text-Mtext-text-primary;
+}
+
+/* verificaion */
+
+.ToogleMod.react-toggle--checked .react-toggle-track {
+  @apply !bg-[#171717];
+}
+
+.ToogleMod .react-toggle-track {
+  @apply !bg-[#E5E5E5];
+}
+
+.ToogleMod.react-toggle--checked .react-toggle-track {
+  @apply !bg-Mdefault-blue;
+}
+
+.ToogleMod .react-toggle-thumb {
+  @apply !shadow-none !outline-none border-none;
+}
+
+/* chart style */
+.chartLine {
+  @apply relative;
+}
+
+.chartLine .label-chart {
+  @apply absolute left-1/2 top-1/2 text-center transform -translate-x-1/2 -translate-y-1/2 z-10;
+
+  /* Tailwind's breakpoints are applied directly using the responsive classes */
+  @apply sm:left-[calc(50%+1rem)];
+  @apply md:left-1/2 md:top-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2;
+}
+
+.chartLine.pai {
+  @apply -ml-8;
+
+  /* On medium screens or smaller, it becomes inline-block and margin is reset */
+  @apply md:ml-0 md:inline-block;
+}
+
+.chartLine .bar .apexcharts-bar-area:hover {
+  @apply fill-[#355fe5] !important;
+}
+
+.chartLine .apexcharts-tooltip {
+  @apply border-0 rounded-full !bg-black text-white;
+}
+
+.chartLine .apexcharts-tooltip .apexcharts-tooltip-text-y-value {
+  @apply m-0;
+}
+
+.chartLine .apexcharts-legend {
+  @apply !-top-[1.8rem] sm:flex hidden;
+}
+.chartLine
+  .apexcharts-legend
+  .apexcharts-legend-series
+  .apexcharts-legend-text {
+  @apply text-[12px] font-semibold !text-Mtext-text-primary dark:!text-Mtext-text-primary-dark;
+}
+
+.chartLine.barHover
+  div
+  div
+  svg
+  .apexcharts-inner
+  .apexcharts-bar-series
+  .apexcharts-series
+  path:hover {
+  @apply ![filter:none];
+}
+.chartLine.barHover
+  div
+  div
+  svg
+  .apexcharts-inner
+  .apexcharts-bar-series
+  .apexcharts-series
+  path {
+  @apply ![filter:none];
+}
+.chartLine.barHover
+  div
+  div
+  svg
+  .apexcharts-inner
+  .apexcharts-bar-series
+  .apexcharts-series
+  path:hover {
+  @apply ![fill:#007AFF] ![stroke:#007AFF];
+}
+.chartLine.barHover
+  div
+  div
+  svg
+  .apexcharts-inner
+  .apexcharts-bar-series
+  .apexcharts-series
+  path[selected="true"] {
+  @apply ![fill:#007AFF] ![stroke:#007AFF];
+}
+/* chart style */
+
+.wrapper__creditcard-slider .slick-dots {
+  @apply !flex justify-center items-center relative bottom-[-0.3rem] list-none;
+}
+.wrapper__creditcard-slider .slick-dots li {
+  @apply flex justify-center items-center w-max;
+}
+
+.wrapper__creditcard-slider .slick-dots button {
+  @apply block w-2 h-2 p-0 border-0 rounded-full bg-white text-transparent before:hidden after:hidden;
+}
+
+.wrapper__creditcard-slider .slick-dots li.slick-active button {
+  @apply w-4 rounded-[30px] bg-Mbrand-brand-primary;
+}
+.wrapper__creditcard-slider .slick-list .slick-slide div .items {
+  @apply transition-all duration-300 ease-in-out;
+}
+.wrapper__creditcard-slider .slick-list .slick-slide:first-child div .items {
+  @apply rotate-45
+}
+.wrapper__creditcard-slider .slick-list .slick-slide:last-child div .items {
+  @apply -rotate-45
+}
+.wrapper__creditcard-slider .slick-list .slick-slide.slick-active  div .items {
+  @apply rotate-0
+}
+/* aniamtion BG */
+.onHoverWrap .animateBg {
+  @apply absolute transition-all duration-500 w-[140%] h-[140%] rotate-45 -left-[70%] top-[120%];
+}
+
+.onHoverWrap .animateBg.lg {
+  @apply absolute transition-all duration-500 w-[140%] h-[140%] rotate-45 -left-[80%] top-[130%];
+}
+
+.onHoverWrap:hover .colorChange {
+  @apply transition-all duration-500;
+}
+
+.onHoverWrap:hover .colorChange {
+  @apply text-white;
+}
+.onHoverWrap:hover .colorChange.lg p {
+  @apply !text-white;
+}
+.onHoverWrap:hover .colorChange.lg h5 {
+  @apply !text-white;
+}
+.onHoverWrap:hover .animateBg {
+  @apply top-0 left-0 rotate-0;
+}
+/* aniamtion BG */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-animation {
+  animation: spin 1.5s linear infinite;
+}
+
+.scrollCustom::-webkit-scrollbar {
+  width: 5px; /* Lebar scrollbar */
+}
+
+.scrollCustom::-webkit-scrollbar-track {
+  background: rgba(
+    0,
+    123,
+    255,
+    0.204
+  ); /* Warna latar belakang track scrollbar */
+}
+
+.scrollCustom::-webkit-scrollbar-thumb {
+  background-color: #007affff; /* Warna biru untuk thumb (bagian yang digeser) */
+  border-radius: 10px; /* Membuat thumb lebih melengkung */
+}
+
+.scrollCustom::-webkit-scrollbar-thumb:hover {
+  background-color: #007affff; /* Warna biru lebih gelap saat hover */
+}
